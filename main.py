@@ -55,16 +55,19 @@ print("██████╗░██████╗░██╗░░░██�
 currN = 0
 print("Welcome to bruteforce. Insert number of digits to crack")
 dig = int(input())
+
+# Random Number generator tester
 max_n = max_pass(dig)
 print("Max Code N: " + str(max_n))
 n = rand.randint(0, max_n)
 print("Password: " + str(n))
+# Random Number generator tester
 
-start_seq()     # Wait 1 sec to start
+start_seq()     # Wait TTS secs to start, remove if needed
 
 while currN != n:   # Change cond to sensor correct input recieved
     sys.stdout.write("\rTrying " + str(currN) + "...")
     try_pin(pin_format(currN))   # Input pin
     currN += 1
-    time.sleep(0.0001)
+    time.sleep(0.0001)  # WARNING: Only for testing. Remove later
 print("\n\nSucessfully Cracked: " + str(currN))
